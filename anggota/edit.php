@@ -23,7 +23,7 @@ $data = mysqli_fetch_array($query);
         <textarea name="alamat" required><?= $data['alamat'] ?></textarea><br><br>
         
         <label>No Telepon:</label><br>
-        <input type="text" name="no_telp" value="<?= $data['no_telp'] ?>" required><br><br>
+        <input type="text" name="telp" value="<?= $data['telp'] ?>" required><br><br>
         
         <button type="submit">Update</button>
         <a href="index.php">Batal</a>

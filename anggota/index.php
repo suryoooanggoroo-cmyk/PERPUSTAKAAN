@@ -23,7 +23,7 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
             <td><?= $data['id_anggota'] ?></td>
             <td><?= $data['nama'] ?></td>
             <td><?= $data['alamat'] ?></td>
-            <td><?= $data['no_telp'] ?></td>
+            <td><?= $data['telp'] ?></td>
         </tr>
         <?php endwhile; ?>
     </table>
