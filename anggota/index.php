@@ -6,11 +6,12 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
 <html>
 <head>
     <title>Data Anggota</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Data Anggota</h2>
     <a href="tambah.php">Tambah Anggota</a><br><br>
-    <table border="1" cellpadding="5" cellspacing="0">
+    <table>
         <tr>
             <th>ID Anggota</th>
             <th>Nama</th>

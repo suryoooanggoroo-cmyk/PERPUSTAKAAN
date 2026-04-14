@@ -8,6 +8,7 @@ $data = mysqli_fetch_array($query);
 <html>
 <head>
     <title>Edit Data Anggota</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Form Edit Anggota</h2>

@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Tambah Data Buku</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Form Tambah Buku</h2>

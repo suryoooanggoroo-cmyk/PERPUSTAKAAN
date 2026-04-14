@@ -11,6 +11,7 @@ $anggota = mysqli_query($conn, "SELECT * FROM anggota");
 <html>
 <head>
     <title>Edit Data Peminjaman</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Form Edit Peminjaman</h2>

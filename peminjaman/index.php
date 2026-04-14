@@ -12,11 +12,12 @@ $query = mysqli_query($conn, "
 <html>
 <head>
     <title>Data Peminjaman</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Data Peminjaman</h2>
     <a href="tambah.php">Tambah Peminjaman</a><br><br>
-    <table border="1" cellpadding="5" cellspacing="0">
+    <table>
         <tr>
             <th>ID Peminjaman</th>
             <th>Buku</th>

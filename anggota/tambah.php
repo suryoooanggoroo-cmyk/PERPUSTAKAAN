@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Tambah Data Anggota</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Form Tambah Anggota</h2>

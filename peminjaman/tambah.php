@@ -7,6 +7,7 @@ $anggota = mysqli_query($conn, "SELECT * FROM anggota");
 <html>
 <head>
     <title>Tambah Data Peminjaman</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h2>Form Tambah Peminjaman</h2>
