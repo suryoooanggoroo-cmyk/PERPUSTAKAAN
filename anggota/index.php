@@ -16,7 +16,6 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
             <th>Nama</th>
             <th>Alamat</th>
             <th>No Telepon</th>
-            <th>Aksi</th>
         </tr>
         <?php while($data = mysqli_fetch_array($query)): ?>
         <tr>
@@ -24,10 +23,6 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
             <td><?= $data['nama'] ?></td>
             <td><?= $data['alamat'] ?></td>
             <td><?= $data['no_telp'] ?></td>
-            <td>
-                <a href="edit.php?id=<?= $data['id_anggota'] ?>">Edit</a>
-                <a href="hapus.php?id=<?= $data['id_anggota'] ?>" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
-            </td>
         </tr>
         <?php endwhile; ?>
     </table>
