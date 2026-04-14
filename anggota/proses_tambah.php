@@ -1,15 +1,16 @@
 <?php
 include '../koneksi.php';
 
-$nama = $_POST['nama'];
-$alamat = $_POST['alamat'];
-$no_telp = $_POST['no_telp'];
+// Melindungi input dari karakter kutip/petik yang menyebabkan error SQL
+$nama    = mysqli_real_escape_string($conn, $_POST['nama']);
+$alamat  = mysqli_real_escape_string($conn, $_POST['alamat']);
+$no_telp = mysqli_real_escape_string($conn, $_POST['no_telp']);
 
 $sql = "INSERT INTO anggota (nama, alamat, no_telp) VALUES ('$nama', '$alamat', '$no_telp')";
 
 if (mysqli_query($conn, $sql)) {
-    header("location:index.php");
+    echo "<script>alert('Data Anggota berhasil ditambahkan!'); window.location='index.php';</script>";
 } else {
-    echo "Error: " . mysqli_error($conn);
+    echo "<script>alert('Error saat menambahkan data: " . mysqli_error($conn) . "'); window.location='tambah.php';</script>";
 }
 ?>
