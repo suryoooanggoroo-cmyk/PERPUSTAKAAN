@@ -18,6 +18,7 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             <th>Penulis</th>
             <th>Penerbit</th>
             <th>Stok</th>
+            <th>Aksi</th>
         </tr>
         <?php while($data = mysqli_fetch_array($query)): ?>
         <tr>
@@ -26,6 +27,10 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             <td><?= $data['penulis'] ?></td>
             <td><?= $data['penerbit'] ?></td>
             <td><?= $data['stok'] ?></td>
+            <td>
+                <a href="edit.php?id=<?= $data['id_buku'] ?>">Edit</a>
+                <a href="hapus.php?id=<?= $data['id_buku'] ?>" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>

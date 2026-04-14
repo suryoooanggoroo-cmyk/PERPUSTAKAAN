@@ -24,6 +24,7 @@ $query = mysqli_query($conn, "
             <th>Anggota (Peminjam)</th>
             <th>Tanggal Pinjam</th>
             <th>Tanggal Kembali</th>
+            <th>Aksi</th>
         </tr>
         <?php while($data = mysqli_fetch_array($query)): ?>
         <tr>
@@ -32,6 +33,10 @@ $query = mysqli_query($conn, "
             <td><?= $data['nama'] ?></td>
             <td><?= $data['tanggal_pinjam'] ?></td>
             <td><?= $data['tanggal_kembali'] ?></td>
+            <td>
+                <a href="edit.php?id=<?= $data['id_peminjaman'] ?>">Edit</a>
+                <a href="hapus.php?id=<?= $data['id_peminjaman'] ?>" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
