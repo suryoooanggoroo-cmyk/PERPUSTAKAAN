@@ -1,38 +1,34 @@
 <?php
-// STEP 1: Tangkap ID dari URL
-include 'koneksi.php';
+include '../koneksi.php';
 $id = $_GET['id'];
-
-// STEP 2: Ambil data siswa berdasarkan ID
-$query = mysqli_query($conn, 
-    "SELECT * FROM siswa WHERE id='$id'");
+$query = mysqli_query($conn, "SELECT * FROM buku WHERE id_buku='$id'");
 $data = mysqli_fetch_array($query);
 ?>
-
-<!-- STEP 3: Tampilkan form dengan data lama -->
-<form action="proses_edit.php" 
-      method="POST">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Data Buku</title>
+</head>
+<body>
+    <h2>Form Edit Buku</h2>
     
-    <!-- Kirim ID lewat hidden input -->
-    <input type="hidden" 
-           name="id" 
-           value="<?= $data['id'] ?>">
-    
-    <label>Nama:</label>
-    <input type="text" 
-           name="nama" 
-           value="<?= $data['nama'] ?>">
-    <br><br>
-    
-    <label>Kelas:</label>
-    <input type="text" 
-           name="kelas" 
-           value="<?= $data['kelas'] ?>">
-    <br><br>
-    
-    <label>Alamat:</label>
-    <textarea name="alamat"><?= $data['alamat'] ?></textarea>
-    <br><br>
-    
-    <button type="submit">Update</button>
-</form>
+    <form action="proses_edit.php" method="POST">
+        <input type="hidden" name="id_buku" value="<?= $data['id_buku'] ?>">
+        
+        <label>Judul Buku:</label><br>
+        <input type="text" name="judul" value="<?= $data['judul'] ?>" required><br><br>
+        
+        <label>Penulis:</label><br>
+        <input type="text" name="penulis" value="<?= $data['penulis'] ?>" required><br><br>
+        
+        <label>Penerbit:</label><br>
+        <input type="text" name="penerbit" value="<?= $data['penerbit'] ?>" required><br><br>
+        
+        <label>Stok:</label><br>
+        <input type="number" name="stok" value="<?= $data['stok'] ?>" required><br><br>
+        
+        <button type="submit">Update</button>
+        <a href="index.php">Batal</a>
+    </form>
+</body>
+</html>

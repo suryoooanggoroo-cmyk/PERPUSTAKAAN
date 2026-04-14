@@ -1,20 +1,14 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
-// Tangkap semua data dari form
-$id     = $_POST['id'];
-$nama   = $_POST['nama'];
-$kelas  = $_POST['kelas'];
-$alamat = $_POST['alamat'];
+$id_buku = $_POST['id_buku'];
+$judul = $_POST['judul'];
+$penulis = $_POST['penulis'];
+$penerbit = $_POST['penerbit'];
+$stok = $_POST['stok'];
 
-// Query UPDATE dengan WHERE
-$sql = "UPDATE siswa SET 
-        nama   = '$nama', 
-        kelas  = '$kelas', 
-        alamat = '$alamat' 
-        WHERE id = '$id'";
+$sql = "UPDATE buku SET judul='$judul', penulis='$penulis', penerbit='$penerbit', stok='$stok' WHERE id_buku='$id_buku'";
 
-// Jalankan query
 if (mysqli_query($conn, $sql)) {
     header("location:index.php");
 } else {

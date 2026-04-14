@@ -1,24 +1,16 @@
 <?php
-// STEP 2: Hubungkan ke database
-include 'koneksi.php';
+include '../koneksi.php';
 
-// STEP 2: Tangkap data dari form
-$nama   = $_POST['nama'];
-$kelas  = $_POST['kelas'];
-$alamat = $_POST['alamat'];
+$judul = $_POST['judul'];
+$penulis = $_POST['penulis'];
+$penerbit = $_POST['penerbit'];
+$stok = $_POST['stok'];
 
-// STEP 3: Buat query INSERT
-$sql = "INSERT INTO siswa 
-        (nama, kelas, alamat) 
-        VALUES 
-        ('$nama', '$kelas', '$alamat')";
+$sql = "INSERT INTO buku (judul, penulis, penerbit, stok) VALUES ('$judul', '$penulis', '$penerbit', '$stok')";
 
-// Jalankan query dan cek keberhasilan
 if (mysqli_query($conn, $sql)) {
-    // Berhasil, kembali ke halaman index
     header("location:index.php");
 } else {
-    // Gagal, tampilkan error
     echo "Error: " . mysqli_error($conn);
 }
 ?>
