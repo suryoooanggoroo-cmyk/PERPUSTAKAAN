@@ -1,17 +1,17 @@
 <?php
 include '../koneksi.php';
 
-$id_peminjaman = $_POST['id_peminjaman'];
-$id_buku = $_POST['id_buku'];
-$id_anggota = $_POST['id_anggota'];
-$tanggal_pinjam = $_POST['tanggal_pinjam'];
-$tanggal_kembali = $_POST['tanggal_kembali'];
+$id_peminjama = mysqli_real_escape_string($conn, $_POST['id_peminjama']);
+$id_buku = mysqli_real_escape_string($conn, $_POST['id_buku']);
+$id_anggota = mysqli_real_escape_string($conn, $_POST['id_anggota']);
+$tgl_peminjaman = mysqli_real_escape_string($conn, $_POST['tgl_peminjaman']);
+$tgl_kembali = mysqli_real_escape_string($conn, $_POST['tgl_kembali']);
 
-$sql = "UPDATE peminjaman SET id_buku='$id_buku', id_anggota='$id_anggota', tanggal_pinjam='$tanggal_pinjam', tanggal_kembali='$tanggal_kembali' WHERE id_peminjaman='$id_peminjaman'";
+$sql = "UPDATE peminjaman SET id_buku='$id_buku', id_anggota='$id_anggota', tgl_peminjaman='$tgl_peminjaman', tgl_kembali='$tgl_kembali' WHERE id_peminjama='$id_peminjama'";
 
 if (mysqli_query($conn, $sql)) {
-    header("location:index.php");
+    echo "<script>alert('Data Peminjaman berhasil diperbarui!'); window.location='index.php';</script>";
 } else {
-    echo "Error: " . mysqli_error($conn);
+    echo "<script>alert('Error saat mengedit data: " . mysqli_error($conn) . "'); window.location='index.php';</script>";
 }
 ?>

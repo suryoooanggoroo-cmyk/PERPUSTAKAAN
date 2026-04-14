@@ -2,7 +2,7 @@
 include '../koneksi.php';
 
 $id = $_GET['id'];
-$sql = "DELETE FROM peminjaman WHERE id_peminjaman='$id'";
+$sql = "DELETE FROM peminjaman WHERE id_peminjama='$id'";
 
 if (mysqli_query($conn, $sql)) {
     header("location:index.php");

@@ -16,7 +16,7 @@ $query = mysqli_query($conn, "
 </head>
 <body>
     <h2>Data Peminjaman</h2>
-    <a href="tambah.php">Tambah Peminjaman</a><br><br>
+    <a href="tambah.php" class="btn-tambah">Tambah Peminjaman</a><br><br>
     <table>
         <tr>
             <th>ID Peminjaman</th>
@@ -28,14 +28,14 @@ $query = mysqli_query($conn, "
         </tr>
         <?php while($data = mysqli_fetch_array($query)): ?>
         <tr>
-            <td><?= $data['id_peminjaman'] ?></td>
+            <td><?= $data['id_peminjama'] ?></td>
             <td><?= $data['judul'] ?></td>
             <td><?= $data['nama'] ?></td>
-            <td><?= $data['tanggal_pinjam'] ?></td>
-            <td><?= $data['tanggal_kembali'] ?></td>
+            <td><?= $data['tgl_peminjaman'] ?></td>
+            <td><?= $data['tgl_kembali'] ?></td>
             <td>
-                <a href="edit.php?id=<?= $data['id_peminjaman'] ?>">Edit</a>
-                <a href="hapus.php?id=<?= $data['id_peminjaman'] ?>" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
+                <a href="edit.php?id=<?= $data['id_peminjama'] ?>">Edit</a>
+                <a href="hapus.php?id=<?= $data['id_peminjama'] ?>" onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
             </td>
         </tr>
         <?php endwhile; ?>

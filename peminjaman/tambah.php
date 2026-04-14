@@ -30,10 +30,10 @@ $anggota = mysqli_query($conn, "SELECT * FROM anggota");
         </select><br><br>
         
         <label>Tanggal Pinjam:</label><br>
-        <input type="date" name="tanggal_pinjam" required><br><br>
+        <input type="date" name="tgl_peminjaman" required><br><br>
         
         <label>Tanggal Kembali:</label><br>
-        <input type="date" name="tanggal_kembali" required><br><br>
+        <input type="date" name="tgl_kembali" required><br><br>
         
         <button type="submit">Simpan</button>
         <a href="index.php">Batal</a>

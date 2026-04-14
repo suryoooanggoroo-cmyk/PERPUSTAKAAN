@@ -1,7 +1,7 @@
 <?php
 include '../koneksi.php';
 $id = $_GET['id'];
-$query = mysqli_query($conn, "SELECT * FROM peminjaman WHERE id_peminjaman='$id'");
+$query = mysqli_query($conn, "SELECT * FROM peminjaman WHERE id_peminjama='$id'");
 $data = mysqli_fetch_array($query);
 
 $buku = mysqli_query($conn, "SELECT * FROM buku");
@@ -17,7 +17,7 @@ $anggota = mysqli_query($conn, "SELECT * FROM anggota");
     <h2>Form Edit Peminjaman</h2>
     
     <form action="proses_edit.php" method="POST">
-        <input type="hidden" name="id_peminjaman" value="<?= $data['id_peminjaman'] ?>">
+        <input type="hidden" name="id_peminjama" value="<?= $data['id_peminjama'] ?>">
         
         <label>Pilih Buku:</label><br>
         <select name="id_buku" required>
@@ -34,10 +34,10 @@ $anggota = mysqli_query($conn, "SELECT * FROM anggota");
         </select><br><br>
         
         <label>Tanggal Pinjam:</label><br>
-        <input type="date" name="tanggal_pinjam" value="<?= $data['tanggal_pinjam'] ?>" required><br><br>
+        <input type="date" name="tgl_peminjaman" value="<?= $data['tgl_peminjaman'] ?>" required><br><br>
         
         <label>Tanggal Kembali:</label><br>
-        <input type="date" name="tanggal_kembali" value="<?= $data['tanggal_kembali'] ?>" required><br><br>
+        <input type="date" name="tgl_kembali" value="<?= $data['tgl_kembali'] ?>" required><br><br>
         
         <button type="submit">Update</button>
         <a href="index.php">Batal</a>
