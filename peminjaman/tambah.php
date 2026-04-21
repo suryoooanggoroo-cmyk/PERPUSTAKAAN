@@ -1,4 +1,5 @@
 <?php
+include '../cek_login.php';
 include '../koneksi.php';
 $buku = mysqli_query($conn, "SELECT * FROM buku");
 $anggota = mysqli_query($conn, "SELECT * FROM anggota");

@@ -1,3 +1,4 @@
+<?php include 'cek_login.php'; ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -79,6 +80,30 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="./" class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            </svg>
+            Perpustakaan
+        </a>
+        <div class="navbar-user">
+            <div class="user-info">
+                <div class="user-avatar"><?= strtoupper(substr($_SESSION['nama_lengkap'], 0, 1)) ?></div>
+                <span><?= htmlspecialchars($_SESSION['nama_lengkap']) ?></span>
+            </div>
+            <a href="logout.php" class="btn-logout" onclick="return confirm('Yakin ingin logout?')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                Logout
+            </a>
+        </div>
+    </nav>
 
     <div class="hero-title">
         <h2>Sistem Manajemen Perpustakaan</h2>

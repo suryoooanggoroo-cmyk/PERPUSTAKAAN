@@ -1,4 +1,5 @@
 <?php
+include '../cek_login.php';
 include '../koneksi.php';
 $id = $_GET['id'];
 $query = mysqli_query($conn, "SELECT * FROM peminjaman WHERE id_peminjama='$id'");

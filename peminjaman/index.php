@@ -1,4 +1,5 @@
 <?php
+include '../cek_login.php';
 include '../koneksi.php';
 // Join to show names instead of IDs
 $query = mysqli_query($conn, "
